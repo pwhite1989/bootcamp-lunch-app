@@ -41,7 +41,7 @@ class WelcomeControllerSpec extends PlaySpec with GuiceOneAppPerTest {
       contentAsString(result) must include("<title>Welcome!!</title>")
     }
 
-    "say good afternoon and have a title" ignore {
+    "say good afternoon and have a title" in {
       val controller = new WelcomeController(FakeAfternoonGreeter)
       val result = controller.welcome.apply(FakeRequest(GET, "/foo"))
       contentAsString(result) must include("<h1>Good Afternoon and Welcome to the fun</h1>")
